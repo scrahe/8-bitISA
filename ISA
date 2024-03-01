@@ -1,0 +1,64 @@
+v1.1 ISA
+LDA: A=value, %0010000 I, %1010000 A
+LDX: X=value, %00000001 I, %10000001 A
+LDY: Y=value, %00000010 I, %10000010 A
+SVA: adress=A, %00000011 a, %10000011 A
+SVX: adress=X, %00000100 a, %10000100 A
+SVY: adress=Y, %00000101 a, %10000101 A
+TAX: X=A, %00000110 i
+TAY: Y=A, %00000111 i
+TXA: A=X, %00001000 i
+TXY: Y=X, %00001001 i
+TYA: A=Y, %00001010 i
+TYX: X=Y, %00001011 i
+ADA: A=value+A, %00001100 I, %10001100 A
+SBA: A=value-A, %00001101 I, %10001101 A
+XRA: A=value XOR A, %00001110 I, %10001110 A
+ANA: A=value AND A, %00001111 I, %10001111 A
+ORA: A=value OR A, %00010000 I, %10010000 A
+RSA: A=A >>, %00010001 i
+LSA: A=A <<, %00010010 i
+NTA: A=!A, %00010011 i
+BUA: PC=A, %10010100 iA (Psuedo)
+BUV: PC=value %00010100 I, %10010100 A
+BZA: PC=A IF Z=1, %10010101 iA (Psuedo)
+BZV: PC=value IF Z=1, %00010101 I, %10010101 A
+BVA: PC=A IF Z=0, %10011000 iA (Psuedo)
+BVV: PC=value IF Z=0, %00011000 I, %10011000 A
+BPA: PC=A IF P=1, %10010110 iA (Psuedo)
+BPV: PC=value IF P=1, %00010110 I, %10010110 A
+BNA: PC=A IF N=1, %10010111 iA (Psuedo)
+BNV: PC=value IF N=1, %00010111 I, %10010111 A
+BGA: PC=A IF G=1, %10010111 iA (Psuedo)
+BGV: PC=value IF G=1, %00010111 I, %10010111 A
+BLA: PC=A IF L=1, %10011001 iA (Psuedo)
+BLV: PC=value IF L=1, %00011001 I, %10011001 A
+BEA: PC=A IF E=1, %10011010 iA (Psuedo)
+BEV: PC=value IF E=1, %00011010 I, %10011010 A
+BIA: PC=A IF E=0, %10011011 iA (Psuedo)
+BIV: PC=value IF E=0, %00011011 I, %10011011 A
+JUA: PC=PC+A, %10011100 iA (Psuedo)
+JUV: PC=PC+value, %00011100 I, %10011100 A
+RTS: PC=S(pop), %00011101 i
+PPA: A=SPop, %00011110 i
+PSA: SPush(A), %00011111 i
+NOP: Nothing, %0000000
+DIT: Disable Interupts, %0010010
+EIT: Enable Interupts, %0010011
+SVZ: adress=0, %0010100 a, %1010100 A
+CMP: Compare accumulater and value, %0010101 I, %1010101 A
+WFI: Wait for Interrupt, %0010101
+END: Stop program, %0010110
+BRK: Create an Inturupt, %0010111
+SMB: Switch RAM Banks, %0011000 I
+SRB: Switch ROM Banks, %0011001 I
+SPC: Stop Clock, %0011010
+RSC: Resume Clock, %0011011
+LAX: Load Value of adress+X to accumulater, %0011100 A
+LAY: Load Value of adress+Y to accumulater, %0011101 A
+INX: Increment X, %0011110 i
+INY: Increment Y, %0011111 i
+INA: Increment A, %01000000 i
+DEX: Decrement X, %01000001 i
+DEY: Decrement Y, %01000010 i
+DEA: Decrement A, %01000011 i
